@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>people counter</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+        background-image: url("yarn.jpeg");
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        /* height: 100vh; */
+        width: 100vw;
+        }
+        
+        .container {
+            background: white;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            border: 6px solid black;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            font-size:40px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        #increment-btn {
+            background: #004225;
+            padding: 10px 47px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+        
+        #save-btn {
+            background: #26577C;
+            padding: 10px 60px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+        
+        #save-el {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Row counter</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment-btn" onclick="increment()">Increment</button>
+        <button id="save-btn" onclick="save()">Save</button>
+        <p id="save-el">Previous entries :</p>
+    </div>
+    <script>
+        let countEl = document.getElementById("count-el");
+        console.log(countEl);
+        let saveEl = document.getElementById("save-el");
+        console.log(saveEl)
+
+        let count = 0 ;
+
+        function increment() {
+            count = count + 1
+            countEl.textContent = count
+        };
+
+        function save() {
+            let countStr = count + ' - ';
+            saveEl.textContent += countStr 
+            countEl.textContent = 0
+            count = 0
+        };
+    </script>
+</body>
+</html>
